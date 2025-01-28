@@ -37,6 +37,7 @@ async def fill_roles_table():
         query = users_roles.insert()
         await database.execute_many(query=query, values=values)
 
+
 async def create_admin():
     query = users_table.select().where(users_table.c.role == 1)
     if not await database.fetch_one(query):

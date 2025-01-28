@@ -8,4 +8,3 @@ class TokenData(BaseModel):
 
 class AccessTokenResponse(BaseModel):
     access_token: str
-

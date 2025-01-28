@@ -17,13 +17,13 @@ async def cart_add_product(
         f"SELECT price FROM products WHERE id = {product_id}"
     )
     query = product_carts_table.insert().values(
-            {
-                "cart_id": cart_id,
-                "product_id": product_id,
-                "quantity": quantity,
-                "total_price": product_price * quantity,
-            }
-        )
+        {
+            "cart_id": cart_id,
+            "product_id": product_id,
+            "quantity": quantity,
+            "total_price": product_price * quantity,
+        }
+    )
 
     return await database.fetch_one(query)
 
@@ -44,9 +44,7 @@ async def cart_delete_product(cart_id: int, product_id: int):
 
 
 async def cart_clear(cart_id: int):
-    query = product_carts_table.delete().where(
-        product_carts_table.c.cart_id == cart_id
-    )
+    query = product_carts_table.delete().where(product_carts_table.c.cart_id == cart_id)
     await database.execute(query)
 
 

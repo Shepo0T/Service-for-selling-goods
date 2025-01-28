@@ -13,7 +13,9 @@ from src.auth.services import check_user_is_admin
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 
-def create_access_token(user: dict[str, Any], expires_delta = timedelta(minutes=auth_config.JWT_EXP)) -> str:
+def create_access_token(
+    user: dict[str, Any], expires_delta=timedelta(minutes=auth_config.JWT_EXP)
+) -> str:
     jwt_data = {
         "sub": str(user["email"]),
         "exp": datetime.now(tz=timezone.utc) + expires_delta,

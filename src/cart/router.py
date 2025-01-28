@@ -26,7 +26,9 @@ cart_router = APIRouter()
     response_description="On successful adding product, the API will respond with a 200 status code and the details of the added product in JSON format.",
 )
 async def add_product_in_cart(
-    product_id: int, quantity: int, token: Annotated[TokenData, Depends(parse_jwt_user_data)]
+    product_id: int,
+    quantity: int,
+    token: Annotated[TokenData, Depends(parse_jwt_user_data)],
 ):
     """
     This endpoint allows authorized users to add a new product in their cart.
@@ -61,7 +63,9 @@ async def cart_remove_product(
     status_code=status.HTTP_204_NO_CONTENT,
     summary="Delete all product from cart.",
 )
-async def cart_clear_products(token: Annotated[TokenData, Depends(parse_jwt_user_data)]):
+async def cart_clear_products(
+    token: Annotated[TokenData, Depends(parse_jwt_user_data)]
+):
     """
     This endpoint allows authorized users to delete all products from their cart.
     """

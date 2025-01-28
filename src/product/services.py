@@ -29,7 +29,7 @@ async def remove_product(product_id: int):
 async def edit_product(product_id: int, request: ProductIn):
     query = (
         products_table.update()
-        .where(products_table.c.id == product_id) # request.id
+        .where(products_table.c.id == product_id)  # request.id
         .values(
             {
                 "name": request.name,

@@ -17,7 +17,6 @@ class UserIn(UserBase):
     password: Check_password
     password_repeat: str
 
-
     @model_validator(mode="after")
     def check_password_match(self):
         if self.password != self.password_repeat:
