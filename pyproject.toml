@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "service-for-selling-goods"
+version = "0.1.0"
+description = ""
+authors = ["Aleksandr <zemacohoznik@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.37"}
+pydantic = "^2.10.5"
+passlib = "^1.7.4"
+asyncpg = "^0.30.0"
+databases = "^0.9.0"
+pydantic-settings = "^2.7.1"
+pyjwt = "^2.10.1"
+greenlet = "^3.1.1"
+psycopg2-binary = "^2.9.10"
+logging = "^0.4.9.6"
+pytest = "^8.3.4"
+anyio = "^4.8.0"
+pytest-asyncio = "^0.25.2"
+trio = "^0.28.0"
+
+
+
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
